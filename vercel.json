@@ -1,9 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "chat.js", "use": "@vercel/node" }
+    { "src": "chat.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" }
   ],
-  "rewrites": [
-    { "source": "/api/chat", "destination": "/chat.js" }
+  "routes": [
+    { "src": "/api/chat", "dest": "/chat.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }￼Enter
